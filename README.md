@@ -1,11 +1,11 @@
-#OTSIKKO
+# Ohjelmistotekniikka , harjoitustyö
 
-Tavallista tekstiä josta osa on **lihavoituja** ja osa *kursivoituja*
+## Tehtävät
 
-Laitetaan vielä lista:
-1. Ensimmäinen
-2. Toinen 
-3. Kolmas
-muutos
+=======
+### Viikko1
 
+[gitlog.txt](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
+[komentorivi.txt](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+>>>>>>> d7f6778d6c0b3636091393769dad45ad0bd92e0f
