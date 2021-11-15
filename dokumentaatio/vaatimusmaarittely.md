@@ -19,3 +19,5 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, muoka
 - Käyttäjä voi lukea muiden kirjoittamia viestejä
 
 ## Jatkokehitysideat
+
+- Sovellusta voi myös laajentaa muihin tehtäviin esimerkiksi lemmikkien ruokkiminen tai ulkoiluttaminen, työpaikoilla eri tehtävien hoitaminen
