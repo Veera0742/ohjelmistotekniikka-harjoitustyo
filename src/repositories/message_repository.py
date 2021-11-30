@@ -30,6 +30,15 @@ class MessageRepository:
 
         return [Message(row["message"]) for row in rows]
 
+    
+    def delete_all(self):
+
+        cursor = self._connection.cursor()
+
+        cursor.execute('delete from messages')
+
+        self._connection.commit()
+
 
 message_repository = MessageRepository(get_database_connection())
 message = message_repository.find_all()

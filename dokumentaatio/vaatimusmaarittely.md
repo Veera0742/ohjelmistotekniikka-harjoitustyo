@@ -10,13 +10,13 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, muoka
 
 ## Toiminnallisuus
 
-- Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan
-- Käyttäjä voi kirjautua sisään
-- Käyttäjä voi luoda uuden tuotteen ostoslistalle
+- Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan "tehty"
+- Käyttäjä voi kirjautua sisään "tehty"
+- Käyttäjä voi luoda uuden tuotteen ostoslistalle "tehty"
 - Käyttäjä voi siirtää ostetun tuotteen ostettujen tuotteiden listalle
 - Käyttäjä voi poistaa tuotteen ostoslistalta
-- Käyttäjä voi kirjoittaa viestin muille käyttäjille
-- Käyttäjä voi lukea muiden kirjoittamia viestejä
+- Käyttäjä voi kirjoittaa viestin muille käyttäjille "tehty"
+- Käyttäjä voi lukea muiden kirjoittamia viestejä "tehty"
 
 ## Jatkokehitysideat
 

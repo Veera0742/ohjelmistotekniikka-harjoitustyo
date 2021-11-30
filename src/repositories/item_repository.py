@@ -30,5 +30,13 @@ class ItemRepository:
 
         return [Item(row["item"]) for row in rows]
 
+    def delete_all(self):
+
+        cursor = self._connection.cursor()
+
+        cursor.execute('delete from items')
+
+        self._connection.commit()
+
 item_repository = ItemRepository(get_database_connection())
 item = item_repository.find_all()
