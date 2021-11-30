@@ -1,3 +1,3 @@
 ## Luokkakaavio:
 
-![Luokkakaavio](dokumentaatio/kuvat/luokkakaavio.png)
+(dokumentaatio/kuvat/luokkakaavio.png)
