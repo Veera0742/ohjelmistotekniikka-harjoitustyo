@@ -27,5 +27,11 @@ Testikattavuusraportin voi luoda komennolla:
 
 > poetry run invoke coverage-report
 
+**Pylint**
+
+Tiedoston .pylintrc määrittelemät tarkistukset voi suorittaa komennolla:
+
+> poetry run invoke lint
+
  
 

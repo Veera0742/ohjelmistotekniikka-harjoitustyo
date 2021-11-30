@@ -2,7 +2,7 @@ import unittest
 from repositories.item_repository import item_repository
 from entities.item import Item
 
-class TestUsers(unittest.TestCase):
+class TestItems(unittest.TestCase):
     def setUp(self):
         item_repository.delete_all()
         self.item_test = Item("Tomaatti")
