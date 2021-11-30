@@ -1,2 +1,3 @@
-##Luokkakaavio:##
+##Luokkakaavio:
+
 ![Luokkakaavio](/kuvat/luokkakaavio.png)
