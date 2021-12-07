@@ -1,5 +1,9 @@
 # Ohjelmistotekniikka, harjoitustyö
 
+## 1. Release
+
+[Viikko5 release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/viikko5)
+
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
