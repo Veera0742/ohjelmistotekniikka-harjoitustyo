@@ -43,7 +43,7 @@ class ShopService:
         existing_user = self._user_repository.find_by_username(username)
 
         if existing_user:
-            raise UsernameExistsError(f'Valitse toinen käyttäjänimi')
+            raise UsernameExistsError('Valitse toinen käyttäjänimi')
 
         user = self._user_repository.create(User(username, password))
 
@@ -76,9 +76,9 @@ class ShopService:
 
         return all_items
 
-    #def set_item_bought(self, item):
+    def delete_item(self, item):
 
-    # How to delete the item??
+        self._item_repository.delete_item(item)
 
     def create_message(self, message):
      
@@ -93,6 +93,10 @@ class ShopService:
         all_messages = self._message_repository.find_all()
 
         return all_messages
+
+    def delete_message(self, message):
+
+        self._message_repository.delete_message(message)
 
 
 

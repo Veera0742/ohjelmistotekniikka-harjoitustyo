@@ -30,6 +30,29 @@ class ItemRepository:
 
         return [Item(row["item"]) for row in rows]
 
+    def find_by_item(self, item):
+
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            'select * from items where item = ?', (item,)
+        )
+
+        row = cursor.fetchone()
+
+        return get_item_by_row(row)
+
+
+    def delete_item(self, item):
+
+        cursor = self._connection.cursor()
+
+        cursor.execute("delete from items where item = ?", (item,)
+        
+        )
+
+        self._connection.commit()
+
     def delete_all(self):
 
         cursor = self._connection.cursor()

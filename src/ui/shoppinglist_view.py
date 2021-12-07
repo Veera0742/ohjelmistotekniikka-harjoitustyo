@@ -5,10 +5,11 @@ from services.shop_service import shop_service
 
 
 class ShoppinglistListView:
-    def __init__(self, root, items):
+    def __init__(self, root, items, handle_delete_item):
     
         self._root = root
         self._items = items
+        self._handle_delete_item = handle_delete_item
         self._frame = None
 
         self._initialize()
@@ -26,9 +27,8 @@ class ShoppinglistListView:
         set_bought_button = ttk.Button(
             master=item_frame,
             text='Ostettu',
-           
+            command=lambda: self._handle_delete_item(item.item)
         )
-        #Add here to delete the item
 
         label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
 
@@ -44,10 +44,11 @@ class ShoppinglistListView:
             self._initialize_item_item(item)
 
 class MessagelistListView:
-    def __init__(self, root, messages):
+    def __init__(self, root, messages, handle_delete_message):
     
         self._root = root
         self._messages = messages
+        self._handle_delete_message = handle_delete_message
         self._frame = None
 
         self._initialize()
@@ -65,9 +66,8 @@ class MessagelistListView:
         set_read_button = ttk.Button(
             master=message_frame,
             text='Luettu',
-           
+            command=lambda: self._handle_delete_message(message.message)
         )
-        #Add here to delete the message
 
         label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
 
@@ -108,6 +108,14 @@ class ItemsView:
         shop_service.logout()
         self._handle_logout()
 
+    def _handle_delete_item(self, item):
+        shop_service.delete_item(item)
+        self._initialize_item_list()
+
+    def _handle_delete_message(self, message):
+        shop_service.delete_message(message)
+        self._initialize_message_list()
+
     def _initialize_item_list(self):
         if self._item_list_view:
             self._item_list_view.destroy()
@@ -116,7 +124,8 @@ class ItemsView:
 
         self._item_list_view = ShoppinglistListView(
             self._item_list_frame,
-            items
+            items, 
+            self._handle_delete_item
         )
 
         self._item_list_view.pack()
@@ -129,7 +138,8 @@ class ItemsView:
 
         self._message_list_view = MessagelistListView(
             self._message_list_frame,
-            messages
+            messages, 
+            self._handle_delete_message
         )
 
         self._message_list_view.pack()

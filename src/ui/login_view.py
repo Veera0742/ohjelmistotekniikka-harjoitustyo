@@ -67,7 +67,7 @@ class LoginView:
 
         self._error_label.grid(padx=5, pady=5)
 
-        self._label = ttk.Label(text = "Tervetuloa ostoslistaan", background="green",)
+        #self._label = ttk.Label(text = "Tervetuloa ostoslistaan", background="green",)
         self._frame = ttk.Frame(master=self._root)
 
         self._initialize_username_field()
@@ -84,7 +84,7 @@ class LoginView:
             text="Luo uusi käyttäjä",
             command=self._handle_show_create_user_view
         )
-        self._label.pack()
+        #self._label.pack()
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
         login_button.grid(padx=5, pady=5, sticky=constants.EW)

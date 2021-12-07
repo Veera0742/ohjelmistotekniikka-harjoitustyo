@@ -31,7 +31,7 @@ class CreateUserView:
             return
         if password != password_safety:
             self._show_error("Salasanat eivät ole samat")
-            
+            return
         try:
             shop_service.create_user(username, password)
             self._handle_create_user()
