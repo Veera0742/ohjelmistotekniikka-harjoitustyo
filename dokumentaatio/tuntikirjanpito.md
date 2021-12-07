@@ -10,5 +10,5 @@
 |29.11.2021|6			 |Sovelluksen kehittäminen|
 |30.11.2021|6            |Sovelluksen kehittäminen, testaus, dokumenttien ylläpito|
 |6.12.2021 |4            |Sovelluksen kehittäminen ja testien kirjoittaminen|
-|7.12.2021 |
-|Yhteensä  |36
+|7.12.2021 |6            |Sovelluksen kehittäminen ja testaus, dokumenttien ylläpito|
+|Yhteensä  |42
