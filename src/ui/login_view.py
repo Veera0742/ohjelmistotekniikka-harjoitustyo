@@ -17,7 +17,6 @@ class LoginView:
     def pack(self):
         self._frame.pack(fill=constants.X)
 
-    
     def destroy(self):
         self._frame.destroy()
 
