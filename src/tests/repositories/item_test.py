@@ -5,9 +5,9 @@ from entities.item import Item
 class TestItems(unittest.TestCase):
     def setUp(self):
         item_repository.delete_all()
-        self.item_test_tomaatti = Item("Tomaatti")
-        self.item_test_kurkku = Item("Kurkku")
-        self.item_test_maito = Item("Maito")
+        self.item_test_tomaatti = Item("Tomaatti", "TestUser", 2)
+        self.item_test_kurkku = Item("Kurkku", "TestUser", 2)
+        self.item_test_maito = Item("Maito", "TestUser", 2)
 
     def test_item_is_set_correctly(self):
         item_repository.create(self.item_test_tomaatti)

@@ -5,9 +5,9 @@ from entities.message import Message
 class TestMessages(unittest.TestCase):
     def setUp(self):
         message_repository.delete_all()
-        self.message_test = Message("Tärkeä viesti")
-        self.message_test_ASAP = Message("Osta ASAP")
-        self.message_test_muista = Message("Muista")
+        self.message_test = Message("Tärkeä viesti", "TestUser")
+        self.message_test_ASAP = Message("Osta ASAP", "TestUser")
+        self.message_test_muista = Message("Muista", "TestUser")
 
     def test_message_is_set_correctly(self):
         message_repository.create(self.message_test)

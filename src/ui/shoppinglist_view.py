@@ -1,4 +1,4 @@
-from tkinter import ttk, constants
+from tkinter import ttk, StringVar, constants
 from repositories.item_repository import ItemRepository
 from repositories.message_repository import MessageRepository
 from services.shop_service import shop_service
@@ -23,6 +23,8 @@ class ShoppinglistListView:
     def _initialize_item_item(self, item):
         item_frame = ttk.Frame(master=self._frame)
         label = ttk.Label(master=item_frame, text=item.item)
+        label_amount = ttk.Label(master=item_frame, text=(f'{item.amount} kpl'))
+        label_user = ttk.Label(master=item_frame, text=(f'Lisännyt: {item.user}'))
 
         set_bought_button = ttk.Button(
             master=item_frame,
@@ -30,9 +32,10 @@ class ShoppinglistListView:
             command=lambda: self._handle_delete_item(item.item)
         )
 
-        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
-
-        set_bought_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
+        label_user.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
+        label.grid(row=0, column=1, padx=5, pady=5)
+        label_amount.grid(row=0, column=2, padx=5, pady=5)
+        set_bought_button.grid(row=0, column=3, padx=5, pady=5, sticky=constants.EW)
 
         item_frame.grid_columnconfigure(0, weight=1)
         item_frame.pack(fill=constants.X)
@@ -62,16 +65,16 @@ class MessagelistListView:
     def _initialize_message_message(self, message):
         message_frame = ttk.Frame(master=self._frame)
         label = ttk.Label(master=message_frame, text=message.message)
+        label_user = ttk.Label(master=message_frame, text=(f'Kirjoittaja: {message.user}'))
 
         set_read_button = ttk.Button(
             master=message_frame,
             text='Luettu',
             command=lambda: self._handle_delete_message(message.message)
         )
-
-        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
-
-        set_read_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
+        label_user.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
+        label.grid(row=0, column=1, padx=5, pady=5)
+        set_read_button.grid(row=0, column=3, padx=5, pady=5, sticky=constants.EW)
 
         message_frame.grid_columnconfigure(0, weight=1)
         message_frame.pack(fill=constants.X)
@@ -95,6 +98,8 @@ class ItemsView:
         self._item_list_view = None
         self._message_list_frame = None
         self._message_list_view = None
+        self._error_variable = None
+        self._error_label = None
 
         self._initialize()
 
@@ -151,35 +156,64 @@ class ItemsView:
 
         user_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
 
-        logout_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
+        logout_button.grid(row=0, column=3, padx=5, pady=5, sticky=constants.EW)
 
     def _handle_create_item(self):
         item = self._create_item_entry.get()
+        user = self._user.username
+        amount = self._create_item_amount.get()
 
+        if len(item) < 2 or len(item) > 20:
+            self._show_error("Tuotteessa täytyy olla 2-20 kirjainta")
+            return
+        if amount==0:
+            self._show_error("Määrän täytyy olla vähintään 1")
+        if len(amount) < 1 or len(amount) > 2:
+            self._show_error("Määrä täytyy olla väliltä 1-99") 
+            return
         if item:
-            shop_service.create_item(item)
+            shop_service.create_item(item, user, amount)
             self._initialize_item_list()
             self._create_item_entry.delete(0, constants.END)
+            self._create_item_amount.delete(0, constants.END)
+            self._hide_error()
 
     def _handle_create_message(self):
         message = self._create_message_entry.get()
+        user = self._user.username
+
+        if len(message) < 2:
+            self._show_error("Viestissä täytyy olla vähintään 2 kirjainta")
+            return
 
         if message:
-            shop_service.create_message(message)
+            shop_service.create_message(message, user)
             self._initialize_message_list()
             self._create_message_entry.delete(0, constants.END)
+            self._hide_error()
+
+    def _show_error(self, message):
+        self._error_variable.set(message)
+        self._error_label.grid()
+
+    def _hide_error(self):
+        self._error_label.grid_remove()
 
     def _initialize_item_field(self):
         self._create_item_entry = ttk.Entry(master=self._frame)
+        amount_label = ttk.Label(master=self._frame, text='Määrä')
+        self._create_item_amount = ttk.Entry(master=self._frame)
 
         create_item_button = ttk.Button(
             master=self._frame,
-            text='Luo uusi tavara',
+            text='Lisää uusi tuote',
             command=self._handle_create_item
         )
 
-        self._create_item_entry.grid(row=3, column=0, padx=5, pady=5, sticky=constants.EW)
-        create_item_button.grid(row=3, column=1, padx=5, pady=5, sticky=constants.EW)
+        self._create_item_entry.grid(row=3, column=0, columnspan=1, padx=5, pady=5, sticky=constants.EW)
+        amount_label.grid(row=3, column=1, padx=5, pady=5, sticky=constants.W)
+        self._create_item_amount.grid(row=3, column=2, padx=5, pady=5, sticky=constants.EW)
+        create_item_button.grid(row=3, column=3, padx=5, pady=5, sticky=constants.EW)
 
     def _initialize_message_field(self):
         self._create_message_entry = ttk.Entry(master=self._frame)
@@ -190,19 +224,30 @@ class ItemsView:
             command=self._handle_create_message
         )
 
-        self._create_message_entry.grid(row=4, column=0, padx=5, pady=5, sticky=constants.EW)
-        create_message_button.grid(row=4, column=1, padx=5, pady=5, sticky=constants.EW)
+        self._create_message_entry.grid(row=4, column=0, columnspan=3, padx=5, pady=5, sticky=constants.EW)
+        create_message_button.grid(row=4, column=3, padx=5, pady=5, sticky=constants.EW)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         self._item_list_frame = ttk.Frame(master=self._frame)
         self._message_list_frame = ttk.Frame(master=self._frame)
 
+        self._error_variable = StringVar(self._frame)
+
+        self._error_label = ttk.Label(
+            master=self._frame,
+            textvariable=self._error_variable,
+            foreground='red'
+        )
+
+        self._error_label.grid(row=1, column=0, padx=5, pady=5)
+
+
         self._initialize_header()
-        self._initialize_item_list()
-        self._initialize_message_list()
         self._initialize_item_field()
         self._initialize_message_field()   
+        self._initialize_item_list()
+        self._initialize_message_list()
      
         self._item_list_frame.grid(
             row=5,
@@ -218,5 +263,5 @@ class ItemsView:
         )
         
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
-        self._frame.grid_columnconfigure(1, weight=0)
+        self._hide_error()
     

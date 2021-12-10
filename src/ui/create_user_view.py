@@ -29,6 +29,12 @@ class CreateUserView:
         if len(username) == 0 or len(password) == 0:
             self._show_error("Käyttäjätunnus ja salasana vaaditaan")
             return
+        if len(username) < 3 or len(username) > 15:
+            self._show_error("Käyttäjätunnuksen tulee olla 3-15 merkkiä pitkä")
+            return
+        if len(password) < 8 or len(password) > 20:
+            self._show_error("Salasanan tulee olla 8-20 merkkiä pitkä")
+            return
         if password != password_safety:
             self._show_error("Salasanat eivät ole samat")
             return
