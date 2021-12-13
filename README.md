@@ -2,7 +2,7 @@
 
 Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommunikointia kaupasta ostettavien tuotteiden muistamiseksi. Sovelluksella voi myös kirjoittaa viestejä muille käyttäjille ostoslistaan liittyen.
 
-## Release
+## Releases
 
 [Viikko5 release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/viikko5)
 
