@@ -13,4 +13,5 @@
 |7.12.2021 |6            |Sovelluksen kehittäminen ja testaus, dokumenttien ylläpito|
 |9.12.2021 |4    		 |Grafiikan kehittäminen, Docstring dokumentointi| 	
 |10.12.2021|3            |Testien kirjoittaminen, Docstring dokumentointi|
-|Yhteensä  |49
+|13.12.2021|4            |Dokumenttien kirjoittaminen ja ylläpito|
+|Yhteensä  |53
