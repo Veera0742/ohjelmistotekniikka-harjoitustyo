@@ -14,6 +14,8 @@ Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommuni
 
 [Arkkitehtuuri](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 ## Komentorivitoiminnot
 
 **Ohjelman suorittaminen**
