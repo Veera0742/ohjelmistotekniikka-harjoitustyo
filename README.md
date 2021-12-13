@@ -6,6 +6,8 @@ Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommuni
 
 [Viikko5 release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/viikko5)
 
+[Viikko6 release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/viikko6)
+
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
