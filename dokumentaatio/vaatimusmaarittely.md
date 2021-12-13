@@ -10,19 +10,20 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, muoka
 
 ## Toiminnallisuus
 
-- Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan "tehty"
-- Käyttäjä voi kirjautua sisään "tehty"
-- Käyttäjä voi luoda uuden tuotteen ostoslistalle "tehty"
-- Listalla näkyy tuotteen lisääjä "tehty"
-- Listalla näkyy tuotteen lisäysaika "tehty"
-- Käyttäjä voi lisätä tuotteiden määrän listalle "tehty"
-- Käyttäjä voi poistaa tuotteen ostoslistalta "tehty"
-- Käyttäjä voi kirjoittaa viestin muille käyttäjille "tehty"
-- Listalla näkyy viestin kirjoittaja "tehty"
-- Listalla näkyy viestin kirjoitusaika
-- Käyttäjä voi poistaa luetun viestin "tehty"
-- Käyttäjä voi lukea muiden kirjoittamia viestejä "tehty"
-- Käyttäjälle näkyy erilaisia virheilmoituksia, jos lisätyt tiedot ovat vääränlaisia "tehty"
+- [x] Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan
+- [x] Käyttäjä voi kirjautua sisään
+- [x] Käyttäjä voi luoda uuden tuotteen ostoslistalle
+- [x] Listalla näkyy tuotteen lisääjä
+- [x] Listalla näkyy tuotteen lisäysaika
+- [x] Käyttäjä voi lisätä tuotteiden määrän listalle
+- [x] Käyttäjä voi poistaa tuotteen ostoslistalta 
+- [] Käyttäjä voi myös poistaa kaikki ostokset samalla kerralla
+- [x] Käyttäjä voi kirjoittaa viestin muille käyttäjille 
+- [x] Listalla näkyy viestin kirjoittaja 
+- [] Listalla näkyy viestin kirjoitusaika
+- [x] Käyttäjä voi poistaa luetun viestin 
+- [x] Käyttäjä voi lukea muiden kirjoittamia viestejä 
+- [x] Käyttäjälle näkyy erilaisia virheilmoituksia, jos lisätyt tiedot ovat vääränlaisia
 
 ## Jatkokehitysideat
 
