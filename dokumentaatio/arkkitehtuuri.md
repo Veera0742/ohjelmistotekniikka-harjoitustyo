@@ -4,4 +4,6 @@
 
 ## Sekvenssikaavio:
 
-![Sekvenssikaavio](/dokumentaatio/kuvat/sekvenssikaavio.png)
+Sisäänkirjautuminen
+
+![Sekvenssikaavio](/dokumentaatio/kuvat/sekvenssikaavio_login.png)

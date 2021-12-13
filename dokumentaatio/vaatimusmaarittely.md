@@ -19,7 +19,7 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, muoka
 - Käyttäjä voi poistaa tuotteen ostoslistalta "tehty"
 - Käyttäjä voi kirjoittaa viestin muille käyttäjille "tehty"
 - Listalla näkyy viestin kirjoittaja "tehty"
-- Listalla näkyy vietin kirjoitusaika
+- Listalla näkyy viestin kirjoitusaika
 - Käyttäjä voi poistaa luetun viestin "tehty"
 - Käyttäjä voi lukea muiden kirjoittamia viestejä "tehty"
 - Käyttäjälle näkyy erilaisia virheilmoituksia, jos lisätyt tiedot ovat vääränlaisia "tehty"
