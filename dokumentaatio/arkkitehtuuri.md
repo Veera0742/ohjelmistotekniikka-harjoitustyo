@@ -24,7 +24,7 @@ Sovelluksen sovelluslogiikassa on kolme luokkaa, jotka kuvaavat käyttäjiä, tu
 
 Sovelluksen toiminnasta vastaa luokka *ShopService*, joka vastaa myös käyttöliittymän toimintaan liittyvistä metodeista. 
 
-*ShopService* saa käyttäjiin liittyvät tallennetut tiedot *repositories* pakkauksesta ja siellä sijaitsevista tietokannan tallennuksesta vastaavista luokista *ItemRepository* sekä *MessageRepository*.
+*ShopService* saa käyttäjiin liittyvät tallennetut tiedot *repositories* pakkauksesta ja siellä sijaitsevista tietokannan tallennuksesta vastaavista luokista *UserRepository*, *ItemRepository* sekä *MessageRepository*.
 
 Ohjelman luokkien suhteita kuvaa alla oleva luokkakaavio:
 
@@ -41,18 +41,18 @@ Alla on kuvattu sovelluksen toimintalogiikka päätoiminnallisuuksien osalta. Se
 
 ### Sisäänkirjautuminen
 
-Ohjelman avautuessa käyttäjälle avautuu *login_view* näkymä ja käyttäjä voi kirjautua sisään olemassaolevilla käyttäjätunnuksilla. Alla on kuvattu sovelluksen kontrolli käyttäjätunnuksen ja salasanan kirjoittamisen sekä *"kirjaudu sisään"*- napin painamisen jälkeen:
+Ohjelman avautuessa käyttäjälle avautuu *login_view* näkymä ja käyttäjä voi kirjautua sisään olemassaolevilla käyttäjätunnuksilla. Alla on kuvattu sovelluksen kontrolli käyttäjätunnuksen ja salasanan kirjoittamisen sekä *"Kirjaudu sisään"*- napin painamisen jälkeen:
 
 ![Sekvenssikaavio_login](/dokumentaatio/kuvat/sekvenssikaavio_login.png)
 
 ### Uuden käyttäjän luominen
 
-Jos käyttäjällä ei ole luotu käyttäjätunnusta, *login_view*-näkymästä voi valita "Luo uusi käyttäjä"-napin. Alla on kuvattu sovelluksen kontrolli käyttäjätunnuksen ja salasanan kirjoittamisen jälkeen ja napin painamisen jälkeen:
+Jos käyttäjällä ei ole luotu käyttäjätunnusta, *login_view*-näkymästä voi valita *"Luo uusi käyttäjä"*-napin. Alla on kuvattu sovelluksen kontrolli käyttäjätunnuksen ja salasanan kirjoittamisen jälkeen ja napin painamisen jälkeen:
 
 ![Sekvenssikaavio_create_user](/dokumentaatio/kuvat/sekvenssikaavio_create_user.png)
 
 ### Uuden tuotteen tai viestin lisääminen
 
-Uuden tuotteen tai viestin lisääminen tapahtuvat samalla periaatteella. *Shopping_list_view*-näkymässä voi lisätä uuden tuotteen/viestin, valita määrän ja painaa "Lisää uusi tuote"/"Lähetä viesti" näppäintä. Alla on kuvattu uuden tuotteen lisääminen, viestin lisääminen toimii samalla periaattella, paitsi kappalemäärää ei ole: 
+Uuden tuotteen tai viestin lisääminen tapahtuvat samalla periaatteella. *Shopping_list_view*-näkymässä voi lisätä uuden tuotteen/viestin, valita määrän ja painaa *"Lisää uusi tuote"/"Lähetä viesti"* näppäintä. Alla on kuvattu uuden tuotteen lisääminen, viestin lisääminen toimii samalla periaatteella, paitsi kappalemäärää ei ole: 
 
 ![Sekvenssikaavio_create_item](/dokumentaatio/kuvat/sekvenssikaavio_create_item.png)
