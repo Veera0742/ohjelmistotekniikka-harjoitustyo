@@ -17,7 +17,7 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, muoka
 - [x] Listalla näkyy tuotteen lisäysaika
 - [x] Käyttäjä voi lisätä tuotteiden määrän listalle
 - [x] Käyttäjä voi poistaa tuotteen ostoslistalta 
-- [ ] Käyttäjä voi myös poistaa kaikki tuotteet listalta samalla kertaa
+- [X] Käyttäjä voi myös poistaa kaikki tuotteet listalta samalla kertaa
 - [x] Käyttäjä voi kirjoittaa viestin muille käyttäjille 
 - [x] Listalla näkyy viestin kirjoittaja 
 - [ ] Listalla näkyy viestin kirjoitusaika

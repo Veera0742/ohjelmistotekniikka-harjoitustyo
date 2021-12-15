@@ -20,7 +20,9 @@ Kirjautumisen jälkeen avautuu näkymä, jossa käyttäjä näkee Ostoslistalle 
 
 Käyttäjä voi lisätä uusia tuotteita näkymässä olevan tekstikentän kautta. Tuotteen nimen lisäksi täytyy määrittää kappalemäärä. Näiden tietojen lisäyksen jälkeen, käyttäjä voi painaa *"Lisää uusi tuote"* - näppäintä, jolloin tuote lisätään näkymässä olevalle listalle. 
  
-Näkymässä käyttäjä näkee omat ja muiden lisäämät tuotteet listana. Näiden lisäksi käyttäjä näkee myös tuotteen lisääjän käyttäjätunnuksen sekä napin *"Ostettu"*, jolla tuote voidaan poistaa näkymästä
+Näkymässä käyttäjä näkee omat ja muiden lisäämät tuotteet listana. Näiden lisäksi käyttäjä näkee myös tuotteen lisääjän käyttäjätunnuksen sekä napin *"Poista tuote listalta"*, jolla tuote voidaan poistaa näkymästä
+
+Jos käyttäjä on ostanut kaikki tuotteet listalta, coi myös painaa nappia *"Poista kaikki tuotteet"*, jolloin koko lista tyhjentyy
 
 ## Viestien lisääminen ja poistaminen
 

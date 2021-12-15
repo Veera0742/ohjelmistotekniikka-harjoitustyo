@@ -144,6 +144,13 @@ class ShopService:
 
         self._item_repository.delete_item(item)
 
+    def delete_all_items(self):
+
+        """Poistaa kaikki tuotteet tietokannasta
+        """
+
+        self._item_repository.delete_all()
+
     def create_message(self, message, user):
         
         """Luo uuden viesti-olion

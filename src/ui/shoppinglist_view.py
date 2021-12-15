@@ -28,7 +28,7 @@ class ShoppinglistListView:
 
         set_bought_button = ttk.Button(
             master=item_frame,
-            text='Ostettu',
+            text='Poista listalta',
             command=lambda: self._handle_delete_item(item.item)
         )
 
@@ -36,15 +36,26 @@ class ShoppinglistListView:
         label.grid(row=0, column=1, padx=5, pady=5)
         label_amount.grid(row=0, column=2, padx=5, pady=5)
         set_bought_button.grid(row=0, column=3, padx=5, pady=5, sticky=constants.EW)
+    
 
+        item_frame.grid_columnconfigure(0, weight=1)
+        item_frame.pack(fill=constants.X)
+
+    def _initialize_items_none(self):
+        item_frame = ttk.Frame(master=self._frame)
+        label_none = ttk.Label(master=item_frame, text='Ostoslista on tyhjä', foreground='orange')
+        label_none.grid(row=0, column=0, padx=5, pady=5)
         item_frame.grid_columnconfigure(0, weight=1)
         item_frame.pack(fill=constants.X)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
-        for item in self._items:
-            self._initialize_item_item(item)
+        if len(self._items)==0:
+            self._initialize_items_none()
+        else:    
+            for item in self._items:
+                self._initialize_item_item(item)
 
 class MessagelistListView:
     def __init__(self, root, messages, handle_delete_message):
@@ -79,11 +90,21 @@ class MessagelistListView:
         message_frame.grid_columnconfigure(0, weight=1)
         message_frame.pack(fill=constants.X)
 
+    def _initialize_messages_none(self):
+        message_frame = ttk.Frame(master=self._frame)
+        label_none = ttk.Label(master=message_frame, text='Ei viestejä', foreground='orange')
+        label_none.grid(row=0, column=0, padx=5, pady=5)
+        message_frame.grid_columnconfigure(0, weight=1)
+        message_frame.pack(fill=constants.X)
+
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
-        for message in self._messages:
-            self._initialize_message_message(message)
+        if len(self._messages)==0:
+            self._initialize_messages_none()
+        else:    
+            for message in self._messages:
+                self._initialize_message_message(message)
 
 
 class ItemsView:
@@ -151,11 +172,8 @@ class ItemsView:
 
     def _initialize_header(self):
         user_label = ttk.Label(master=self._frame, text=f'Tervetuloa {self._user.username}')
-
         logout_button = ttk.Button(master=self._frame, text='Kirjaudu ulos', command=self._logout_handler)
-
         user_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
-
         logout_button.grid(row=0, column=3, padx=5, pady=5, sticky=constants.EW)
 
     def _handle_create_item(self):
@@ -166,6 +184,8 @@ class ItemsView:
         if len(item) < 2 or len(item) > 20:
             self._show_error("Tuotteessa täytyy olla 2-20 kirjainta")
             return
+        if type(amount) is not int:
+            self._show_error("Määrän pitää olla numero")
         if amount==0:
             self._show_error("Määrän täytyy olla vähintään 1")
         if len(amount) < 1 or len(amount) > 2:
@@ -177,6 +197,10 @@ class ItemsView:
             self._create_item_entry.delete(0, constants.END)
             self._create_item_amount.delete(0, constants.END)
             self._hide_error()
+
+    def _handle_delete_all_items(self):
+        shop_service.delete_all_items()
+        self._initialize_item_list()
 
     def _handle_create_message(self):
         message = self._create_message_entry.get()
@@ -191,6 +215,16 @@ class ItemsView:
             self._initialize_message_list()
             self._create_message_entry.delete(0, constants.END)
             self._hide_error()
+
+    def _initialize_delete_all_items(self):
+        shopping_list_label = ttk.Label(master=self._frame, text='TÄMÄN HETKINEN OSTOSLISTASI:')
+        delete_all_items_button = ttk.Button(master=self._frame, text='Poista kaikki tuotteet', command=self._handle_delete_all_items)
+        shopping_list_label.grid(row=5, column=0, padx=5, pady=5, sticky=constants.W)
+        delete_all_items_button.grid(row=5, column=3, padx=5, pady=5, sticky=constants.EW)
+
+    def _initialize_messages_header(self):
+        messages_header_label = ttk.Label(master=self._frame, text='TÄMÄN HETKISET VIESTISI:')
+        messages_header_label.grid(row=7, column=0, padx=5, pady=5, sticky=constants.W)
 
     def _show_error(self, message):
         self._error_variable.set(message)
@@ -245,18 +279,20 @@ class ItemsView:
 
         self._initialize_header()
         self._initialize_item_field()
-        self._initialize_message_field()   
+        self._initialize_message_field()  
+        self._initialize_delete_all_items() 
         self._initialize_item_list()
+        self._initialize_messages_header()
         self._initialize_message_list()
      
         self._item_list_frame.grid(
-            row=5,
+            row=6,
             column=0,
             columnspan=2,
             sticky=constants.EW
         )
         self._message_list_frame.grid(
-            row=6,
+            row=8,
             column=0,
             columnspan=2,
             sticky=constants.EW
