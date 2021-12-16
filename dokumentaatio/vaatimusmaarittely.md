@@ -15,34 +15,30 @@ Sovellus koostuu kolmesta eri näkymästä:
 - Uuden käyttäjän luomisnäkymä 
 - Ostoslistanäkymä
 
-Kun sovellus aukeaa, se avaa ensimmäisenä kirjautumisnäkymän, josta voi siirtyä ostoslistanäkymään, joko olemassaolevilla tunnuksilla tai uuden käyttäjän luomisnäkymän kautta
+Kun sovellus aukeaa, avautuu ensimmäisenä kirjautumisnäkymä, josta voi siirtyä joko ostoslistanäkymään olemassaolevilla tunnuksilla tai uuden käyttäjän luomisnäkymään, ja sitä kautta siirtyä ostoslistanäkymään
 
 ## Toiminnallisuus
 
 ### Ennen kirjautumista
 
-- Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan
+- Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasana
 	- Käyttäjätunnus ei saa olla käytössä kenelläkään muulla käyttäjällä, muuten järjestelmä antaa virheilmoituksen
 	- Käyttäjätunnus pitää olla 3-15 merkkiä pitkä, muuten järjestelmä antaa virheilmoituksen
 	- Salasanan tulee olla 8-20 merkkiä pitkä ja se pitää toistaa kaksi kertaa samanlaisena, muuten järjestelmä antaa virheilmoituksen
 - Käyttäjä voi kirjautua sisään sovellukseen
-	- Kirjautuminen tehtään kirjautumisnäkymässä jo luodulla käyttäjätunnuksella
+	- Kirjautuminen tehdään kirjautumisnäkymässä jo luodulla käyttäjätunnuksella
 	- Jos käyttäjää ei ole vielä luotu, järjestelmä antaa virheilmoituksen
 	
 ### Kirjautumisen jälkeen
 
--  Käyttäjä voi luoda uuden tuotteen ostoslistalle
--  Käyttäjä voi lisätä tuotteiden määrän listalle
+-  Käyttäjä voi luoda uuden tuotteen ostoslistalle sekä lisätä tuotteiden määrän listalle
 	- Tämän jälkeen käyttäjälle näkyy listalla tuotteen lisääjä, tuotteen nimi sekä määrä
 -  Käyttäjä voi poistaa tuotteen ostoslistalta 
 -  Käyttäjä voi poistaa kaikki tuotteet listalta samalla kertaa
-
 -  Käyttäjä voi kirjoittaa viestin muille käyttäjille 
 	- Tämän jälkeen käyttäjälle näkyy listalla viestin kirjoittaja sekä viesti
 -  Käyttäjä voi poistaa luetun viestin 
-
 -  Käyttäjälle näkyy erilaisia virheilmoituksia, jos lisätyt tiedot ovat vääränlaisia
-
 -  Käyttäjä voi kirjautua ulos järjestelmästä, jolloin näkymäksi palautuu kirjautumisnäkymä
 
 ## Jatkokehitysideat
