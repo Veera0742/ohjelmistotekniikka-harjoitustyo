@@ -14,7 +14,7 @@ Repositio-luokkia *UserRepository*, *ItemRepository* ja *MessageRepository* test
 
 ### Testikattavuus
 
-Testikattavuus on ??? Lisää kuva testikattavuusraportista!!!
+
 
 ## Järjestelmätestaus
 
