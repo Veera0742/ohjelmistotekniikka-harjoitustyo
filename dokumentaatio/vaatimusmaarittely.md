@@ -45,7 +45,7 @@ Kun sovellus aukeaa, avautuu ensimmäisenä kirjautumisnäkymä, josta voi siirt
 
 - Sovellusta voi myös laajentaa muihin tehtäviin
 - Viesteihin voisi lisätä päivämäärän ja kellonajan, milloin viesti on kirjoitettu
-- Postettujen tuotteiden tarkastelu
+- Poistettujen tuotteiden tarkastelu
 - Poistettujen tuotteiden ja viestien palautus
 - Mahdollisuus tuotteiden määrien muuttamiseen
 - Yksityisten tuotteiden lisääminen, jotka näkee vain tietty käyttäjä
