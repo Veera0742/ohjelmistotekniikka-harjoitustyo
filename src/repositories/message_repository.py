@@ -1,5 +1,4 @@
 from entities.message import Message
-from repositories.user_repository import user_repository
 from database_connection import get_database_connection
 
 def get_message_by_row(row):
@@ -14,7 +13,6 @@ class MessageRepository:
         Args:
             connection: [Tietokantayhteyden Connection-olio]
         """
-    
         self._connection = connection
 
     def create(self, message):
@@ -78,12 +76,10 @@ class MessageRepository:
         cursor = self._connection.cursor()
 
         cursor.execute("delete from messages where message = ?", (message,)
-        
         )
 
         self._connection.commit()
 
-    
     def delete_all(self):
         """Poistaa kaikki viestit tietokannasta
         """

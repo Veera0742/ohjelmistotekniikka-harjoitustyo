@@ -1,4 +1,4 @@
-import unittest 
+import unittest
 from repositories.user_repository import user_repository
 from entities.user import User
 
@@ -12,6 +12,7 @@ class TestUsers(unittest.TestCase):
     def test_username_and_password_is_set_correctly(self):
         user_repository.create(self.user_test)
         users = user_repository.find_all()
+        self.assertEqual(len(users), 1)
         self.assertEqual(users[0].username, self.user_test.username)
 
     def test_username_and_password_works_if_correct(self):

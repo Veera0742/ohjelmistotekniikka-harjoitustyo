@@ -21,13 +21,18 @@ class UsernameExistsError(Exception):
 class ShopService:
     """Sovelluslogiikasta vastaava luokka"""
 
-    def __init__(self, user_repository=default_user_repository, item_repository=default_item_repository, message_repository=default_message_repository):
+    def __init__(self, user_repository=default_user_repository,
+                item_repository=default_item_repository,
+                message_repository=default_message_repository):
         """Luokan konstruktori. Luo uuden sovelluslogiikasta vastaavan palvelun
 
         Args:
-            user_repository ([UserRepository-olio], optional): [UserRepository luokkaa vastaavat metodit]. Defaults to default_user_repository.
-            item_repository ([ItemRepository-olio], optional): [ItemRepository luokkaa vastaavat metodit]. Defaults to default_item_repository.
-            message_repository ([Message-repository-olio], optional): [MessageRepository luokkaa vastaavat metodit]. Defaults to default_message_repository.
+            user_repository ([UserRepository-olio], optional):
+                [UserRepository luokkaa vastaavat metodit].
+            item_repository ([ItemRepository-olio], optional):
+                [ItemRepository luokkaa vastaavat metodit].
+            message_repository ([Message-repository-olio], optional):
+                [MessageRepository luokkaa vastaavat metodit].
         """
         self._user = None
         self._item = None
@@ -37,20 +42,18 @@ class ShopService:
         self._message_repository = message_repository
 
     def login(self, username, password):
-
         """Kirjaa käyttäjän sisään
 
         Args:
             username: Merkkijonoarvo, joka kuvaa käyttäjän käyttäjätunnusta
             password: Merkkijonoarvo, joka kuvaa käyttäjän salasanaa
-    
         Raises:
-            InvalidCredentialsError: [Virhe, joka tapahtuu, jos käyttäjää ei ole olemassa tai tunnus ja salasana eivät ole samat]
+            InvalidCredentialsError: [Virhe, joka tapahtuu, jos käyttäjää ei ole olemassa 
+                tai tunnus ja salasana eivät ole samat]
 
         Returns:
             [User-olio]: [kirjautunut käyttäjä]
         """
-        
         user = self._user_repository.find_by_username(username)
 
         if not user or user.password != password:
@@ -67,15 +70,13 @@ class ShopService:
         Args:
             username: Merkkijonoarvo, joka kuvaa käyttäjän tunnusta
             password: Merkkijonoarvo, joka kuvaa käyttäjän salasanaa
-            login: Boolean, joka kertoo kirjataanko käyttäjä käyttäjän luomisen jälkeen. Oletusarvo: True
-            
+            login: Boolean, joka kertoo kirjataanko käyttäjä käyttäjän luomisen jälkeen. Oletusarvo: True    
         Raises:
             UsernameExistsError: [Virhe, joka tapahtuu, jos käyttäjänimi on jo olemassa]
 
         Returns:
             [User-olio]: [luotu ja kirjautunut käyttäjä]
         """
-        
         existing_user = self._user_repository.find_by_username(username)
 
         if existing_user:
@@ -96,7 +97,6 @@ class ShopService:
         Returns:
             [User-olio]: [kirjautunut käyttäjä]
         """
-        
         return self._user
 
     def logout(self):
@@ -117,8 +117,7 @@ class ShopService:
 
         Returns:
             [Item-olio]: [Luotu tuote-olio]
-        """
-     
+        """ 
         item = self._item_repository.create(Item(item, user, amount))
 
         self._item = item
@@ -152,7 +151,6 @@ class ShopService:
         self._item_repository.delete_all()
 
     def create_message(self, message, user):
-        
         """Luo uuden viesti-olion
 
         Args:
@@ -161,8 +159,7 @@ class ShopService:
 
         Returns:
             [Message-olio]: [Luotu message-olio]
-        """
-     
+        """     
         message = self._message_repository.create(Message(message, user))
 
         self._message = message
@@ -187,7 +184,5 @@ class ShopService:
         """
 
         self._message_repository.delete_message(message)
-
-
 
 shop_service = ShopService()

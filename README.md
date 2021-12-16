@@ -1,14 +1,12 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Ostoslista (Ohjelmistotekniikka, harjoitustyö)
 
 Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommunikointia kaupasta ostettavien tuotteiden muistamiseksi. Sovelluksella voi myös kirjoittaa viestejä muille käyttäjille ostoslistaan liittyen.
 
-## Releases
+## Dokumentaatio
 
 [Viikko5 release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/viikko5)
 
 [Viikko6 release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/viikko6)
-
-## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
@@ -17,6 +15,8 @@ Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommuni
 [Arkkitehtuuri](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 [Käyttöohje](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
+[Testidokumentti](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 
 ## Komentorivitoiminnot
 

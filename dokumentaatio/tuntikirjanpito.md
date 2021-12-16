@@ -14,5 +14,6 @@
 |9.12.2021 |4    		 |Grafiikan kehittäminen, Docstring dokumentointi| 	
 |10.12.2021|3            |Testien kirjoittaminen, Docstring dokumentointi|
 |13.12.2021|4            |Dokumenttien kirjoittaminen ja ylläpito|
-|15.12.2021|
-|Yhteensä  |53
+|15.12.2021|6			 |Koodin parantaminen, testien kirjoittaminen|
+|16.12.2021|2            |Testien kirjoittaminen, dokumenttien kirjoittaminen|
+|Yhteensä  |61

@@ -6,25 +6,51 @@ Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommuni
 
 ## Käyttäjät
 
-Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, muokata ja lisätä asioita ostoslistaan
+Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, lisätä ja poistaa tuotteita ostoslistalta sekä lukea, lisätä ja poistaa viestejä viestitaululta
+
+## Käyttöliittymä
+
+Sovellus koostuu kolmesta eri näkymästä:
+- Kirjautumisnäkymä
+- Uuden käyttäjän luomisnäkymä 
+- Ostoslistanäkymä
+
+Kun sovellus aukeaa, se avaa ensimmäisenä kirjautumisnäkymän, josta voi siirtyä ostoslistanäkymään, joko olemassaolevilla tunnuksilla tai uuden käyttäjän luomisnäkymän kautta
 
 ## Toiminnallisuus
 
-- [x] Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan
-- [x] Käyttäjä voi kirjautua sisään
-- [x] Käyttäjä voi luoda uuden tuotteen ostoslistalle
-- [x] Listalla näkyy tuotteen lisääjä
-- [x] Listalla näkyy tuotteen lisäysaika
-- [x] Käyttäjä voi lisätä tuotteiden määrän listalle
-- [x] Käyttäjä voi poistaa tuotteen ostoslistalta 
-- [X] Käyttäjä voi myös poistaa kaikki tuotteet listalta samalla kertaa
-- [x] Käyttäjä voi kirjoittaa viestin muille käyttäjille 
-- [x] Listalla näkyy viestin kirjoittaja 
-- [ ] Listalla näkyy viestin kirjoitusaika
-- [x] Käyttäjä voi poistaa luetun viestin 
-- [x] Käyttäjä voi lukea muiden kirjoittamia viestejä 
-- [x] Käyttäjälle näkyy erilaisia virheilmoituksia, jos lisätyt tiedot ovat vääränlaisia
+### Ennen kirjautumista
+
+- Käyttäjä voi luoda itselleen käyttäjätunnuksen ja salasanan
+	- Käyttäjätunnus ei saa olla käytössä kenelläkään muulla käyttäjällä, muuten järjestelmä antaa virheilmoituksen
+	- Käyttäjätunnus pitää olla 3-15 merkkiä pitkä, muuten järjestelmä antaa virheilmoituksen
+	- Salasanan tulee olla 8-20 merkkiä pitkä ja se pitää toistaa kaksi kertaa samanlaisena, muuten järjestelmä antaa virheilmoituksen
+- Käyttäjä voi kirjautua sisään sovellukseen
+	- Kirjautuminen tehtään kirjautumisnäkymässä jo luodulla käyttäjätunnuksella
+	- Jos käyttäjää ei ole vielä luotu, järjestelmä antaa virheilmoituksen
+	
+### Kirjautumisen jälkeen
+
+-  Käyttäjä voi luoda uuden tuotteen ostoslistalle
+-  Käyttäjä voi lisätä tuotteiden määrän listalle
+	- Tämän jälkeen käyttäjälle näkyy listalla tuotteen lisääjä, tuotteen nimi sekä määrä
+-  Käyttäjä voi poistaa tuotteen ostoslistalta 
+-  Käyttäjä voi poistaa kaikki tuotteet listalta samalla kertaa
+
+-  Käyttäjä voi kirjoittaa viestin muille käyttäjille 
+	- Tämän jälkeen käyttäjälle näkyy listalla viestin kirjoittaja sekä viesti
+-  Käyttäjä voi poistaa luetun viestin 
+
+-  Käyttäjälle näkyy erilaisia virheilmoituksia, jos lisätyt tiedot ovat vääränlaisia
+
+-  Käyttäjä voi kirjautua ulos järjestelmästä, jolloin näkymäksi palautuu kirjautumisnäkymä
 
 ## Jatkokehitysideat
 
-- Sovellusta voi myös laajentaa muihin tehtäviin esimerkiksi lemmikkien ruokkiminen tai ulkoiluttaminen, työpaikoilla eri tehtävien hoitaminen
+- Sovellusta voi myös laajentaa muihin tehtäviin
+- Viesteihin voisi lisätä päivämäärän ja kellonajan, milloin viesti on kirjoitettu
+- Postettujen tuotteiden tarkastelu
+- Poistettujen tuotteiden ja viestien palautus
+- Mahdollisuus tuotteiden määrien muuttamiseen
+- Yksityisten tuotteiden lisääminen, jotka näkee vain tietty käyttäjä
+- Yksityisten viestien lähettäminen muille käyttäjille

@@ -13,7 +13,6 @@ class UserRepository:
         Args:
             connection: [Tietokantayhteyden Connection-olio]
         """
-    
         self._connection = connection
 
     def create(self, user):

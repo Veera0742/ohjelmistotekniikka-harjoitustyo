@@ -1,5 +1,4 @@
 from entities.item import Item
-from repositories.user_repository import user_repository
 from database_connection import get_database_connection
 
 def get_item_by_row(row):
@@ -28,7 +27,8 @@ class ItemRepository:
         cursor = self._connection.cursor()
 
         cursor.execute(
-            'insert into items (item, user, amount) values (?, ?, ?)', (item.item, item.user, item.amount)
+            'insert into items (item, user, amount) values (?, ?, ?)',
+            (item.item, item.user, item.amount)
         )
 
         self._connection.commit()
@@ -77,7 +77,6 @@ class ItemRepository:
         cursor = self._connection.cursor()
 
         cursor.execute("delete from items where item = ?", (item,)
-        
         )
 
         self._connection.commit()

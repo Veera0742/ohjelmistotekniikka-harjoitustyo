@@ -40,7 +40,7 @@ class FakeItemRepository:
     def find_all(self):
         return self.items
 
-    def find_by_item(self, item):
+    def find_by_item(self):
         matching_items = filter(
             lambda item: item.item == item,
             self.items
@@ -65,7 +65,7 @@ class FakeMessageRepository:
     def find_all(self):
         return self.messages
 
-    def find_by_message(self, message):
+    def find_by_message(self):
         matching_messages = filter(
             lambda message: message.message == message,
             self.messages
@@ -116,6 +116,12 @@ class TestShopService(unittest.TestCase):
             lambda: self.shop_service.login('nottestname', 'nottestpassword')
         )
 
+    def test_login_ok__when_no_username_or_password(self):
+        self.assertRaises(
+            InvalidCredentialsError,
+            lambda: self.shop_service.login('', '')
+        )
+
     def test_get_logged_in_user_works(self):
         self.login_user(self.user_test)
 
@@ -137,12 +143,16 @@ class TestShopService(unittest.TestCase):
     def test_create_item(self):
         self.login_user(self.user_test)
 
-        self.shop_service.create_item(self.item_test.item, self.item_test.user, self.item_test.amount)
+        self.shop_service.create_item(
+            self.item_test.item,
+            self.item_test.user,
+            self.item_test.amount)
         items = self.shop_service.get_unbought_items()
 
         self.assertEqual(len(items), 1)
         self.assertEqual(items[0].item, self.item_test.item)
-        self.assertEqual(items[0].user, self.user_test.username)   
+        self.assertEqual(items[0].user, self.user_test.username)
+        self.assertEqual(items[0].amount, self.item_test.amount)
 
     def test_create_message(self):
         self.login_user(self.user_test)
@@ -152,12 +162,16 @@ class TestShopService(unittest.TestCase):
 
         self.assertEqual(len(messages), 1)
         self.assertEqual(messages[0].message, self.message_test.message)
-        self.assertEqual(messages[0].user, self.user_test.username)  
+        self.assertEqual(messages[0].user, self.user_test.username)
 
     def test_get_unbough_items(self):
         self.login_user(self.user_test)
 
-        self.shop_service.create_item(self.item_test.item, self.item_test.user, self.item_test.amount)
+        self.shop_service.create_item(
+            self.item_test.item, 
+            self.item_test.user, 
+            self.item_test.amount
+            )
         items=self.shop_service.get_unbought_items()
 
         self.assertEqual(len(items), 1)
@@ -172,8 +186,17 @@ class TestShopService(unittest.TestCase):
         self.assertEqual(len(messages), 1)
         self.assertEqual(messages[0].message, self.message_test.message)
 
+    def test_delete_all_items(self):
+        self.login_user(self.user_test)
 
-    
-    
+        self.shop_service.create_item(
+            self.item_test.item,
+            self.item_test.user,
+            self.item_test.amount
+        )
+        self.shop_service.delete_all_items()
 
-         
+        items=self.shop_service.get_unbought_items()
+
+        self.assertEqual(len(items), 0)
+        
