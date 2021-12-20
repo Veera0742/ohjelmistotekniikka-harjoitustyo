@@ -27,3 +27,7 @@ Sovellus on käynnistetty käyttöohjeiden nukaan ja sitä on käytetty Window- 
 ### Toiminnallisuudet
 
 Kaikki määrittelydokumentissa ja käyttöohjeessa mainitut toiminnallisuudet on käyty läpi. Sovelluksessa on myös testattu laajasti mahdolliset virheelliset syötteet ja niiden tuottamat virheilmoitukset
+
+## Sovellukseen jääneet laatuongelmat
+
+- Sovellus ei anna virheilmoitusta kun tuotteen määrä ei ole numero
