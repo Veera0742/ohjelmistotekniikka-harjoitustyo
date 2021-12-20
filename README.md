@@ -2,11 +2,11 @@
 
 Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommunikointia kaupasta ostettavien tuotteiden muistamiseksi. Sovelluksella voi myös kirjoittaa viestejä muille käyttäjille ostoslistaan liittyen.
 
+Sovellus on testattu Python versiolla 3.8.
+
 ## Dokumentaatio
 
-[Viikko5 release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/viikko5)
-
-[Viikko6 release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/viikko6)
+[Loppupalautus release](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/releases/tag/loppupalautus)
 
 [Vaatimusmäärittely](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
@@ -17,6 +17,20 @@ Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommuni
 [Käyttöohje](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 [Testausdokumentti](https://github.com/Veera0742/ohjelmistotekniikka-harjoitustyo/blob/master/dokumentaatio/testaus.md)
+
+## Asennus
+
+1. Asenna riippuvuudet komennolla:
+
+> poetry install
+
+2. Suorita alustustoimenpiteet komennolla:
+
+> poetry run invoke build
+
+3. Käynnistä komennolla:
+
+> poetry run invoke start
 
 ## Komentorivitoiminnot
 

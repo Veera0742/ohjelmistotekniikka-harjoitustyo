@@ -1,6 +1,6 @@
 # Testausdokumentti
 
-Ohjelmaa on testattu unittestillä yksikkö- ja integraatiotestein
+Ohjelmaa on testattu unittestillä yksikkö- ja integraatiotestein, sekä manuaalisesti. 
 
 ## Yksikkö- ja integraatiotestaus
 
@@ -22,7 +22,7 @@ Sovelluksen järjestelmätestaus on tehty manuaalisesti
 
 ### Asennus ja konfigurointi
 
-Sovellus on käynnistetty käyttöohjeiden nukaan ja sitä on käytetty Window- ja Linux ympäristöissä
+Sovellus on käynnistetty käyttöohjeiden mukaan ja sitä on käytetty Window- ja Linux ympäristöissä
 
 ### Toiminnallisuudet
 

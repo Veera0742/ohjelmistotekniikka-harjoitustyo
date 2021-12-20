@@ -6,7 +6,7 @@ Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommuni
 
 ## Käyttäjät
 
-Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, lisätä ja poistaa tuotteita ostoslistalta sekä lukea, lisätä ja poistaa viestejä viestitaululta
+Sovelluksessa on vain yhdenlaisia käyttäjiä, jotka kaikki voivat lukea, lisätä ja poistaa tuotteita ostoslistalta sekä lukea, lisätä ja poistaa viestejä viestitaululta.
 
 ## Käyttöliittymä
 
@@ -15,7 +15,7 @@ Sovellus koostuu kolmesta eri näkymästä:
 - Uuden käyttäjän luomisnäkymä 
 - Ostoslistanäkymä
 
-Kun sovellus aukeaa, avautuu ensimmäisenä kirjautumisnäkymä, josta voi siirtyä joko ostoslistanäkymään olemassaolevilla tunnuksilla tai uuden käyttäjän luomisnäkymään, ja sitä kautta siirtyä ostoslistanäkymään
+Kun sovellus aukeaa, avautuu ensimmäisenä kirjautumisnäkymä, josta voi siirtyä joko ostoslistanäkymään olemassaolevilla tunnuksilla tai uuden käyttäjän luomisnäkymään, ja sitä kautta siirtyä ostoslistanäkymään.
 
 ## Toiminnallisuus
 
