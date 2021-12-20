@@ -2,7 +2,7 @@
 
 Sovelluksen tarkoitus on helpottaa esimerkiksi perheen tai työyhteisön kommunikointia kaupasta ostettavien tuotteiden muistamiseksi. Sovelluksella voi myös kirjoittaa viestejä muille käyttäjille ostoslistaan liittyen.
 
-Sovellus on testattu Python versiolla 3.8.
+Sovellusta on testattu Python versiolla 3.8.
 
 ## Dokumentaatio
 
@@ -20,15 +20,15 @@ Sovellus on testattu Python versiolla 3.8.
 
 ## Asennus
 
-1. Asenna riippuvuudet komennolla:
+Asenna riippuvuudet komennolla:
 
 > poetry install
 
-2. Suorita alustustoimenpiteet komennolla:
+Suorita alustustoimenpiteet komennolla:
 
 > poetry run invoke build
 
-3. Käynnistä komennolla:
+Käynnistä komennolla:
 
 > poetry run invoke start
 

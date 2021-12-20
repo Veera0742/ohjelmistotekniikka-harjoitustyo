@@ -16,4 +16,5 @@
 |13.12.2021|4            |Dokumenttien kirjoittaminen ja ylläpito|
 |15.12.2021|6			 |Koodin parantaminen, testien kirjoittaminen|
 |16.12.2021|2            |Testien kirjoittaminen, dokumenttien kirjoittaminen|
-|Yhteensä  |61
+|20.12.2021|2            |Dokumenttien viimeistely|
+|Yhteensä  |63
