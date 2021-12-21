@@ -14,7 +14,13 @@ Repositio-luokkia *UserRepository*, *ItemRepository* ja *MessageRepository* test
 
 ### Testikattavuus
 
+Sovelluksen testauksen haaraumakattavuus on 88%.
 
+Raportin saa luotua komennolla:
+
+> poetry run invoke coverage-report
+
+Raportti luodaan *htmlcov*-hakemistoon.
 
 ## Järjestelmätestaus
 

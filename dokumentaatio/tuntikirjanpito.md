@@ -17,4 +17,5 @@
 |15.12.2021|6			 |Koodin parantaminen, testien kirjoittaminen|
 |16.12.2021|2            |Testien kirjoittaminen, dokumenttien kirjoittaminen|
 |20.12.2021|2            |Dokumenttien viimeistely|
-|Yhteensä  |63
+|21.12.2021|1			 |Viimeistely ja loppupalautus-release|	
+|Yhteensä  |64
