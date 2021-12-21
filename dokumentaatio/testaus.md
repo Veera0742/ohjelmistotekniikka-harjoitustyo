@@ -14,7 +14,7 @@ Repositio-luokkia *UserRepository*, *ItemRepository* ja *MessageRepository* test
 
 ### Testikattavuus
 
-Sovelluksen testauksen haaraumakattavuus on 88%.
+Sovelluksen testauksen haaraumakattavuus on 87%.
 
 Raportin saa luotua komennolla:
 
